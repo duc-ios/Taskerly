@@ -26,12 +26,10 @@ extension TaskDetailView: TaskDetailDisplayLogic {
 struct TaskDetailView: View {
     @ObservedObject var store = TaskDetailDataStore()
     var interactor: TaskDetailBusinessLogic!
-    @Binding var path: [Route]
 
     @Environment(\.safeAreaInsets) var safeAreaInsets
 
-    init(path: Binding<[Route]>) {
-        _path = path
+    init() {
         let standardAppearance = UINavigationBarAppearance()
         standardAppearance.configureWithTransparentBackground()
         standardAppearance.titleTextAttributes = [
@@ -91,7 +89,7 @@ struct TaskDetailView: View {
 #if DEBUG
 #Preview {
     NavigationStack {
-        TaskDetailView(path: .constant([]))
+        TaskDetailView()
             .configured(
                 task: TaskItem(
                     timestamp: Date(),

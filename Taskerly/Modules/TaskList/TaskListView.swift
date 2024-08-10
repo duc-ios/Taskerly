@@ -72,7 +72,6 @@ extension TaskListView {
 struct TaskListView: View {
     @ObservedObject var store = TaskListDataStore()
     var interactor: TaskListBusinessLogic!
-    @Binding var path: [Route]
 
     @Environment(\.safeAreaInsets) private var safeAreaInsets
 
@@ -87,7 +86,7 @@ struct TaskListView: View {
                     Spacer()
 
                     LinearButton(label: { Text("+ Add Task") }, action: {
-                        path.append(.create)
+                        Router.shared.navigate(to: .create)
                     })
                 }
 
@@ -171,7 +170,7 @@ struct TaskListView: View {
         configurations: .init(isStoredInMemoryOnly: true)
     )
     return NavigationView {
-        TaskListView(path: .constant([]))
+        TaskListView()
             .configured(modelContext: container.mainContext)
     }
 }

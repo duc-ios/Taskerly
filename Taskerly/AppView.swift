@@ -10,24 +10,24 @@ import SwiftUI
 
 struct AppView: View {
     @Environment(\.modelContext) var modelContext
-    @State private var path = [Route]()
+    @State private var router = Router.shared
 
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: $router.path) {
             ProgressView()
                 .onAppear {
-                    path.append(.list)
+                    router.pop(to: .list)
                 }
                 .navigationDestination(for: Route.self) {
                     switch $0 {
                     case .list:
-                        TaskListView(path: $path)
+                        TaskListView()
                             .configured(modelContext: modelContext)
                     case .create:
-                        CreateTaskView(path: $path)
+                        CreateTaskView()
                             .configured(modelContext: modelContext)
                     case .detail(let task):
-                        CreateTaskView(path: $path)
+                        CreateTaskView()
                             .configured(modelContext: modelContext, task: task)
                     }
                 }

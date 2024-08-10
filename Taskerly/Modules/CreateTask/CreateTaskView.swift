@@ -30,7 +30,6 @@ extension CreateTaskView: CreateTaskDisplayLogic {
         store.title = viewModel.title
         store.buttonTitle = viewModel.buttonTitle
         store.formFields = viewModel.formFields
-        store.task = viewModel.task
     }
 
     func displayCreateButton(viewModel: CreateTask.ValidateFormFields.ViewModel) {
@@ -38,19 +37,17 @@ extension CreateTaskView: CreateTaskDisplayLogic {
     }
 
     func displayCreatedTask(viewModel: CreateTask.CreateTask.ViewModel) {
-        path.removeLast()
+        Router.shared.pop(to: .list)
     }
 }
 
 struct CreateTaskView: View {
     var interactor: CreateTaskBusinessLogic!
-    @Binding var path: [Route]
 
     @ObservedObject var store = CreateTaskDataStore()
     @Environment(\.safeAreaInsets) private var safeAreaInsets
 
-    init(path: Binding<[Route]>) {
-        _path = path
+    init() {
         let standardAppearance = UINavigationBarAppearance()
         standardAppearance.configureWithTransparentBackground()
         standardAppearance.titleTextAttributes = [
@@ -144,7 +141,7 @@ struct CreateTaskView: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button(action: {
-                    path.removeLast()
+                    Router.shared.pop()
                 }, label: {
                     Image(systemName: "chevron.left")
                         .font(.body.weight(.semibold))
@@ -167,7 +164,7 @@ struct CreateTaskView: View {
         configurations: .init(isStoredInMemoryOnly: true)
     )
     return NavigationStack {
-        CreateTaskView(path: .constant([]))
+        CreateTaskView()
             .configured(modelContext: container.mainContext)
     }
 }
