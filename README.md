@@ -7,6 +7,12 @@
 
 A visually appealing and intuitive task management app that with beautiful UI/UX, mobile development proficiency, and attention to detail.
 
+<img src="https://lh3.googleusercontent.com/d/17D0HxIPlPtpLHU721YtDuiM2Fry_Ne8H" width="200"></img>
+<img src="https://lh3.googleusercontent.com/d/1I_Mz0xr3ONw1DpSDasaEG286icHxUZFC" width="200"></img>
+<img src="https://lh3.googleusercontent.com/d/1rwIq8W2hJV6xX6lL8f2HHj8_GFB77czB" width="200"></img>
+<img src="https://lh3.googleusercontent.com/d/1-9Fwiu-7wqwieiLvd9TOWZhuo8wkl5CD" width="200"></img>
+[![Video](https://lh3.googleusercontent.com/d/1roftW1K6_vNCWjYFS9ACjkYgbDZyBkzh)](https://drive.google.com/file/d/1foVJO6ushO7iSbiVd3iX-XcD8bv5Hv0c/preview)
+
 ## Features
 
 - [x] Create a dashboard view showing task statistics (e.g., completed vs. pending tasks).
@@ -85,9 +91,9 @@ Duc Nguyen – ducnh.2012@gmail.com
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
-[https://github.com/duc-ios/EarthSandwich](https://github.com/duc-ios/EarthSandwich)
+[https://github.com/duc-ios/Taskerly](https://github.com/duc-ios/Taskerly)
 
-[swift-image]:https://img.shields.io/badge/swift-3.0-orange.svg
+[swift-image]:https://img.shields.io/badge/swift-5.10-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
