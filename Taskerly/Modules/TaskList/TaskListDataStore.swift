@@ -15,4 +15,5 @@ final class TaskListDataStore: ObservableObject {
 
     @Published var tasks: [TaskItem] = []
     @Published var tab: TaskListView.Tab = .pending
+    @Published var greeting: String = ""
 }

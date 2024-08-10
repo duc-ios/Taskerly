@@ -11,6 +11,7 @@ import SwiftUI
 protocol TaskListDisplayLogic {
     func displayLoading(isLoading: Bool)
     func displayError(viewModel: TaskList.ShowError.ViewModel)
+    func displayGreeting(viewModel: TaskList.GetGreeting.ViewModel)
     func displayTasks(viewModel: TaskList.FetchTasks.ViewModel)
 }
 
@@ -22,6 +23,10 @@ extension TaskListView: TaskListDisplayLogic {
     func displayError(viewModel: TaskList.ShowError.ViewModel) {
         store.errorMessage = viewModel.message
         store.displayError = true
+    }
+
+    func displayGreeting(viewModel: TaskList.GetGreeting.ViewModel) {
+        store.greeting = viewModel.greetingText
     }
 
     func displayTasks(viewModel: TaskList.FetchTasks.ViewModel) {
@@ -77,7 +82,7 @@ struct TaskListView: View {
                 Color.clear.frame(height: safeAreaInsets.top)
 
                 HStack {
-                    Text(Greeting().hello()).font(.largeTitle.weight(.semibold))
+                    Text(store.greeting).font(.largeTitle.weight(.semibold))
 
                     Spacer()
 

@@ -10,6 +10,7 @@ import Foundation
 protocol TaskListPresentationLogic {
     func presentIsLoading(isLoading: Bool)
     func presentError(response: TaskList.ShowError.Response)
+    func presentGreeting(response: TaskList.GetGreeting.Response)
     func presentTasks(response: TaskList.FetchTasks.Response)
 }
 
@@ -28,6 +29,10 @@ extension TaskListPresenter: TaskListPresentationLogic {
 
     func presentError(response: TaskList.ShowError.Response) {
         view.displayError(viewModel: .init(message: (response.error as NSError).description))
+    }
+
+    func presentGreeting(response: TaskList.GetGreeting.Response) {
+        view.displayGreeting(viewModel: .init(greetingText: response.greetingText))
     }
 
     func presentTasks(response: TaskList.FetchTasks.Response) {

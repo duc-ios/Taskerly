@@ -8,8 +8,8 @@
 import Foundation
 
 struct Greeting {
-    func hello() -> String {
-        let hour = Calendar.current.component(.hour, from: Date())
+    func text(date: Date) -> String {
+        let hour = Calendar.current.component(.hour, from: date)
         switch hour {
         case 5..<12:
             return "Good Morning!"

@@ -11,6 +11,7 @@ import SwiftUI
 protocol TaskListBusinessLogic {
     func showLoading(isLoading: Bool)
     func showError(request: TaskList.ShowError.Request)
+    func getGreeting(request: TaskList.GetGreeting.Request)
     func fetchTasks(request: TaskList.FetchTasks.Request)
     func deleteTask(request: TaskList.DeleteTasks.Request)
     func moveTasks(indices: IndexSet, newOffset: Int)
@@ -37,6 +38,11 @@ extension TaskListInteractor: TaskListBusinessLogic {
 
     func showError(request: TaskList.ShowError.Request) {
         presenter.presentError(response: .init(error: request.error))
+    }
+
+    func getGreeting(request: TaskList.GetGreeting.Request) {
+        let greetingText = Greeting().text(date: request.date)
+        presenter.presentGreeting(response: .init(greetingText: greetingText))
     }
 
     func fetchTasks(request: TaskList.FetchTasks.Request) {

@@ -23,6 +23,20 @@ enum TaskList {
         }
     }
 
+    enum GetGreeting {
+        struct Request {
+            var date: Date
+        }
+
+        struct Response {
+            var greetingText: String
+        }
+
+        struct ViewModel {
+            var greetingText: String
+        }
+    }
+
     enum FetchTasks {
         struct Request {
             var animated: Bool = true

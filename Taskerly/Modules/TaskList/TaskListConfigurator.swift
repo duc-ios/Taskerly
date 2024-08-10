@@ -20,6 +20,7 @@ extension TaskListView {
             modelContext: modelContext
         )
         view.interactor = interactor
+        interactor.getGreeting(request: .init(date: Date()))
         return view
     }
 }
