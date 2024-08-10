@@ -57,13 +57,7 @@ enum CreateTask {
     enum CreateTask {
         struct Request {
             var task: TaskItem?
-            var name: String
-            var date: Date
-            var desc: String
-            var category: String
-            var customCategory: String
-            var priority: TaskItem.Priority
-            var reminder: TaskItem.Reminder
+            var formFields: CreateTaskFormField
         }
 
         struct Response {}

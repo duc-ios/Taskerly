@@ -20,11 +20,11 @@ class CreateTaskInteractor {
     init(presenter: CreateTaskPresentationLogic,
          modelContext: ModelContext) {
         self.presenter = presenter
-        self.modelContext = modelContext
+        self.repository = LocalTaskRepository(modelContext: modelContext)
     }
 
     private let presenter: CreateTaskPresentationLogic
-    private let modelContext: ModelContext
+    private let repository: TaskRepository
 }
 
 extension CreateTaskInteractor: CreateTaskBusinessLogic {
@@ -53,35 +53,13 @@ extension CreateTaskInteractor: CreateTaskBusinessLogic {
 
     func createTask(request: CreateTask.CreateTask.Request) {
         do {
-            var category = TaskCategory(rawValue: request.category) ?? .personal
-            if request.category == "Custom" {
-                category = .custom(request.customCategory)
-            }
-            var task: TaskItem
-            // swiftlint:disable:next identifier_name
-            if let _task = request.task {
-                task = _task
-                task.timestamp = request.date
-                task.name = request.name.isEmpty ? "Task" : request.name
-                task.desc = request.desc
-                task.rawCategory = category.rawValue
-                task.rawPriority = request.priority.rawValue
-                task.rawReminder = request.reminder.rawValue
-                try modelContext.save()
+            let task: TaskItem
+            if let taskToUpdate = request.task {
+                task = try repository.update(task: taskToUpdate, formFields: request.formFields)
             } else {
-                task = TaskItem(
-                    timestamp: request.date,
-                    name: request.name.isEmpty ? "Task" : request.name,
-                    desc: request.desc,
-                    category: category,
-                    priority: request.priority,
-                    status: .pending,
-                    reminder: request.reminder,
-                    order: 0
-                )
-                modelContext.insert(task)
+                task = repository.createTask(with: request.formFields)
             }
-            if request.reminder != .none {
+            if request.formFields.reminder != .none {
                 let content = UNMutableNotificationContent()
                 content.title = task.name
                 content.subtitle = task.desc

@@ -45,6 +45,7 @@
 		898F2E2D2C66335C00BD6470 /* TaskerlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F2E2C2C66335C00BD6470 /* TaskerlyUITests.swift */; };
 		898F2E2F2C66335C00BD6470 /* TaskerlyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F2E2E2C66335C00BD6470 /* TaskerlyUITestsLaunchTests.swift */; };
 		898F2E412C66357600BD6470 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F2E402C66357600BD6470 /* Constants.swift */; };
+		89E129A92C677A7C00C05683 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E129A82C677A7C00C05683 /* TaskRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		898F2E2C2C66335C00BD6470 /* TaskerlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskerlyUITests.swift; sourceTree = "<group>"; };
 		898F2E2E2C66335C00BD6470 /* TaskerlyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskerlyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		898F2E402C66357600BD6470 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		89E129A82C677A7C00C05683 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +331,7 @@
 		898F2E442C66358800BD6470 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				89E129A82C677A7C00C05683 /* TaskRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				893CAD412C664AEA004BE5AB /* TaskListModel.swift in Sources */,
 				897D605F2C665143007EADB4 /* Greeting.swift in Sources */,
 				897D60632C665D64007EADB4 /* GradientButton.swift in Sources */,
+				89E129A92C677A7C00C05683 /* TaskRepository.swift in Sources */,
 				897D60652C665E98007EADB4 /* Color+Extensions.swift in Sources */,
 				897D60672C666632007EADB4 /* SafeArea+Extensions.swift in Sources */,
 				897D60612C665A99007EADB4 /* SegmentedControl.swift in Sources */,

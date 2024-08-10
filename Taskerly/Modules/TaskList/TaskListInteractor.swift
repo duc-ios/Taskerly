@@ -22,11 +22,12 @@ class TaskListInteractor {
     init(presenter: TaskListPresentationLogic,
          modelContext: ModelContext) {
         self.presenter = presenter
-        self.modelContext = modelContext
+        self.repository = LocalTaskRepository(modelContext: modelContext)
     }
 
     private let presenter: TaskListPresentationLogic
-    private let modelContext: ModelContext
+    private let repository: TaskRepository
+
     private var tab: TaskListView.Tab = .pending
     private var tasks: [TaskItem] = []
 }
@@ -55,18 +56,7 @@ extension TaskListInteractor: TaskListBusinessLogic {
             tab = .completed
         }
         do {
-            let descriptor: FetchDescriptor<TaskItem>
-            if let status = request.status {
-                descriptor = FetchDescriptor<TaskItem>(
-                    predicate: #Predicate { $0.rawStatus == status.rawValue },
-                    sortBy: [SortDescriptor(\.order), SortDescriptor(\.timestamp, order: .reverse)]
-                )
-            } else {
-                descriptor = FetchDescriptor<TaskItem>(
-                    sortBy: [SortDescriptor(\.order), SortDescriptor(\.timestamp, order: .reverse)]
-                )
-            }
-            tasks = try modelContext.fetch(descriptor)
+            tasks = try repository.fetch(status: request.status)
             presenter.presentTasks(response: .init(
                 animated: request.animated,
                 tab: tab,
@@ -79,7 +69,7 @@ extension TaskListInteractor: TaskListBusinessLogic {
     }
 
     func deleteTask(request: TaskList.DeleteTasks.Request) {
-        modelContext.delete(request.task)
+        repository.delete(task: request.task)
         tasks.removeAll(where: { $0.id == request.task.id })
         presenter.presentTasks(response: .init(
             tab: tab,
@@ -90,8 +80,7 @@ extension TaskListInteractor: TaskListBusinessLogic {
     func moveTasks(indices: IndexSet, newOffset: Int) {
         do {
             tasks.move(fromOffsets: indices, toOffset: newOffset)
-            tasks.enumerated().forEach { $0.element.order = $0.offset }
-            try modelContext.save()
+            try repository.updateOrder(tasks: tasks)
         } catch {
             debugPrint("Move failed", error)
             presenter.presentError(response: .init(error: error))
@@ -100,9 +89,11 @@ extension TaskListInteractor: TaskListBusinessLogic {
 
     func markTask(request: TaskList.MarkTask.Request) {
         do {
-            let task = request.task
-            task.rawStatus = request.status.rawValue
-            try modelContext.save()
+            try repository.mark(task: request.task, status: request.status)
+            if request.status == .pending && tab == .completed
+                || request.status == .completed && tab == .pending {
+                tasks.removeAll(where: { $0.id == request.task.id })
+            }
             presenter.presentTasks(response: .init(tab: tab, tasks: tasks))
         } catch {
             debugPrint("Mark failed", error)

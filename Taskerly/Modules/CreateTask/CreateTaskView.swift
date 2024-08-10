@@ -27,6 +27,7 @@ extension CreateTaskView: CreateTaskDisplayLogic {
     }
 
     func displayTask(viewModel: CreateTask.ShowTask.ViewModel) {
+        store.task = viewModel.task
         store.title = viewModel.title
         store.buttonTitle = viewModel.buttonTitle
         store.formFields = viewModel.formFields
@@ -119,16 +120,10 @@ struct CreateTaskView: View {
                 }, action: {
                     interactor.createTask(request: .init(
                         task: store.task,
-                        name: store.formFields.name,
-                        date: store.formFields.date,
-                        desc: store.formFields.desc,
-                        category: store.formFields.category,
-                        customCategory: store.formFields.customCategory,
-                        priority: store.formFields.priority,
-                        reminder: store.formFields.reminder
+                        formFields: store.formFields
                     ))
                 }, isDisabled: store.isButtonDisabled)
-                .listRowBackground(Color.clear)
+                    .listRowBackground(Color.clear)
             }
             .padding(.horizontal, 44)
         }
