@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "image@1x.png",
+      "scale" : "1x",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "image@2x.png",
+      "scale" : "2x",
+      "idiom" : "universal"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "filename" : "image@3x.png"
+    }
+  ],
+  "author" : "Iconizer",
+  "version" : "2020.11.0"
+}
