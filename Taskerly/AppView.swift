@@ -13,9 +13,13 @@ struct AppView: View {
 
     var body: some View {
         NavigationStack(path: $router.path) {
-            ProgressView()
+            OnboardingView()
                 .onAppear {
-                    router.pop(to: .list)
+                    if UserSettings.isOnboarded {
+                        router.pop(to: .list)
+                    } else {
+                        UserSettings.isOnboarded = true
+                    }
                 }
                 .navigationDestination(for: Route.self) {
                     switch $0 {
@@ -31,7 +35,7 @@ struct AppView: View {
                     }
                 }
         }
-        .tint(Color.purple)
+        .tint(Color.gradient)
     }
 }
 

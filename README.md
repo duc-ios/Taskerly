@@ -7,14 +7,15 @@
 
 A visually appealing and intuitive task management app that with beautiful UI/UX, mobile development proficiency, and attention to detail.
 
+<img src="https://lh3.googleusercontent.com/d/1rwIq8W2hJV6xX6lL8f2HHj8_GFB77czB" width="200"></img>
 <img src="https://lh3.googleusercontent.com/d/17D0HxIPlPtpLHU721YtDuiM2Fry_Ne8H" width="200"></img>
 <img src="https://lh3.googleusercontent.com/d/1I_Mz0xr3ONw1DpSDasaEG286icHxUZFC" width="200"></img>
-<img src="https://lh3.googleusercontent.com/d/1rwIq8W2hJV6xX6lL8f2HHj8_GFB77czB" width="200"></img>
 <img src="https://lh3.googleusercontent.com/d/1-9Fwiu-7wqwieiLvd9TOWZhuo8wkl5CD" width="200"></img>
 [![Video](https://lh3.googleusercontent.com/d/1roftW1K6_vNCWjYFS9ACjkYgbDZyBkzh)](https://drive.google.com/file/d/1foVJO6ushO7iSbiVd3iX-XcD8bv5Hv0c/preview)
 
 ## Features
 
+- [x] Create a visually appealing onboarding experience for first-time users.
 - [x] Create a dashboard view showing task statistics (e.g., completed vs. pending tasks).
 - [x] Allow users to create, read, update, and delete tasks.
 - [x] Add the ability to set reminders for tasks.
@@ -64,17 +65,15 @@ A visually appealing and intuitive task management app that with beautiful UI/UX
 
    - Decision: Every aspect of the app, from micro-interactions to color schemes, will be carefully considered.
    - Rationale: Attention to detail is crucial in creating an app that feels polished and professional. Small details such as iconography, button responsiveness, and even the choice of typography can significantly impact the user experience. By meticulously refining these details, Taskerly will stand out as a premium task management solution that delights users and keeps them engaged.
-  
+
 ### Conclusion
 
 The combination of Clean Swift VIPER architecture, SwiftData, a well-designed Figma template, and a focus on modern iOS features ensures that Taskerly will be a robust, scalable, and user-friendly app. The decisions made in the development of Taskerly are guided by the need for a high-quality, intuitive, and visually appealing task management experience that leverages the latest in mobile development technologies and design practices.
 
 ## Future improvements
 
-- [ ] Create a visually appealing onboarding experience for first-time users.
 - [ ] Allow filter tasks by category.
 - [ ] Add unit & ui tests.
-- [ ] Add a launch screen.
 - [ ] Add support for subtasks with an expandable/collapsible UI.
 - [ ] Add support for repeating tasks.
 - [ ] Add support for clould data storing.
@@ -83,17 +82,17 @@ The combination of Clean Swift VIPER architecture, SwiftData, a well-designed Fi
 
 ## Contribute
 
-We would love you for the contribution to **Taskerly**, check the ``LICENSE`` file for more info.
+We would love you for the contribution to **Taskerly**, check the `LICENSE` file for more info.
 
 ## Meta
 
 Duc Nguyen – ducnh.2012@gmail.com
 
-Distributed under the MIT license. See ``LICENSE`` for more information.
+Distributed under the MIT license. See `LICENSE` for more information.
 
 [https://github.com/duc-ios/Taskerly](https://github.com/duc-ios/Taskerly)
 
-[swift-image]:https://img.shields.io/badge/swift-5.10-orange.svg
+[swift-image]: https://img.shields.io/badge/swift-5.10-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE

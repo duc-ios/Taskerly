@@ -55,6 +55,7 @@ struct SegmentedControl<T: SegmentedControlItem>: View {
                                 text.foregroundStyle(Color.text)
                             }
                         }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
                 }
             }

@@ -49,6 +49,9 @@
 		8999B9122C689433001ACD12 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999B90D2C689433001ACD12 /* Database.swift */; };
 		8999B9132C689433001ACD12 /* SwiftDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999B90E2C689433001ACD12 /* SwiftDatabase.swift */; };
 		8999B9152C689433001ACD12 /* TaskItemDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999B9102C689433001ACD12 /* TaskItemDB.swift */; };
+		8999B9182C68A801001ACD12 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999B9172C68A801001ACD12 /* OnboardingView.swift */; };
+		8999B91A2C68AA27001ACD12 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999B9192C68AA27001ACD12 /* UserSettings.swift */; };
+		8999B91C2C68BC51001ACD12 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999B91B2C68BC51001ACD12 /* PageControl.swift */; };
 		89E129A92C677A7C00C05683 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E129A82C677A7C00C05683 /* TaskRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +119,9 @@
 		8999B90D2C689433001ACD12 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		8999B90E2C689433001ACD12 /* SwiftDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDatabase.swift; sourceTree = "<group>"; };
 		8999B9102C689433001ACD12 /* TaskItemDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItemDB.swift; sourceTree = "<group>"; };
+		8999B9172C68A801001ACD12 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		8999B9192C68AA27001ACD12 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		8999B91B2C68BC51001ACD12 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		89E129A82C677A7C00C05683 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -307,6 +313,7 @@
 				897D608D2C66951B007EADB4 /* Route.swift */,
 				897D609A2C672183007EADB4 /* Haptic.swift */,
 				8999B90B2C688D8D001ACD12 /* NotificationsManager.swift */,
+				8999B9192C68AA27001ACD12 /* UserSettings.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -325,6 +332,7 @@
 			children = (
 				897D60602C665A99007EADB4 /* SegmentedControl.swift */,
 				897D60622C665D64007EADB4 /* GradientButton.swift */,
+				8999B91B2C68BC51001ACD12 /* PageControl.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +340,7 @@
 		898F2E432C66357F00BD6470 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8999B9162C68A7F7001ACD12 /* Onboarding */,
 				893CAD3D2C664AEA004BE5AB /* TaskList */,
 				897D606B2C668685007EADB4 /* TaskDetail */,
 				897D60782C668B89007EADB4 /* CreateTask */,
@@ -363,6 +372,14 @@
 				8999B9102C689433001ACD12 /* TaskItemDB.swift */,
 			);
 			path = SwiftDatabase;
+			sourceTree = "<group>";
+		};
+		8999B9162C68A7F7001ACD12 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				8999B9172C68A801001ACD12 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -535,6 +552,7 @@
 				897D60762C66868F007EADB4 /* TaskDetailModel.swift in Sources */,
 				897D60972C66C560007EADB4 /* TaskDetailCard.swift in Sources */,
 				897D60772C66868F007EADB4 /* TaskDetailConfigurator.swift in Sources */,
+				8999B91A2C68AA27001ACD12 /* UserSettings.swift in Sources */,
 				897D607F2C668BA3007EADB4 /* CreateTaskPresenter.swift in Sources */,
 				897D60802C668BA3007EADB4 /* CreateTaskDataStore.swift in Sources */,
 				897D60812C668BA3007EADB4 /* CreateTaskInteractor.swift in Sources */,
@@ -546,6 +564,7 @@
 				898F2E142C66335A00BD6470 /* TaskItem.swift in Sources */,
 				898F2E102C66335A00BD6470 /* TaskerlyApp.swift in Sources */,
 				893CAD3F2C664AEA004BE5AB /* TaskListDataStore.swift in Sources */,
+				8999B9182C68A801001ACD12 /* OnboardingView.swift in Sources */,
 				897D606A2C666B18007EADB4 /* TaskListCard.swift in Sources */,
 				898F2E412C66357600BD6470 /* Constants.swift in Sources */,
 				897D60942C66C4A7007EADB4 /* Field.swift in Sources */,
@@ -556,6 +575,7 @@
 				897D60632C665D64007EADB4 /* GradientButton.swift in Sources */,
 				89E129A92C677A7C00C05683 /* TaskRepository.swift in Sources */,
 				897D60652C665E98007EADB4 /* Color+Extensions.swift in Sources */,
+				8999B91C2C68BC51001ACD12 /* PageControl.swift in Sources */,
 				897D60672C666632007EADB4 /* SafeArea+Extensions.swift in Sources */,
 				8999B90C2C688D8D001ACD12 /* NotificationsManager.swift in Sources */,
 				897D60612C665A99007EADB4 /* SegmentedControl.swift in Sources */,

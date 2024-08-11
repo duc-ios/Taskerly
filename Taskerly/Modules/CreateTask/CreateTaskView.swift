@@ -141,7 +141,11 @@ struct CreateTaskView: View {
                     Image(systemName: "chevron.left")
                         .font(.body.weight(.semibold))
                         .foregroundStyle(.white)
+                        .padding(.trailing, 16)
+                        .padding(.vertical, 8)
+//                        .background(.red)
                 })
+//                .background(.yellow)
             }
         }
         .onChange(of: store.formFields) {
