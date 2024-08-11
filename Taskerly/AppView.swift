@@ -9,7 +9,6 @@ import SwiftData
 import SwiftUI
 
 struct AppView: View {
-    @Environment(\.modelContext) var modelContext
     @State private var router = Router.shared
 
     var body: some View {
@@ -22,13 +21,13 @@ struct AppView: View {
                     switch $0 {
                     case .list:
                         TaskListView()
-                            .configured(modelContext: modelContext)
+                            .configured()
                     case .create:
                         CreateTaskView()
-                            .configured(modelContext: modelContext)
+                            .configured()
                     case .detail(let task):
                         CreateTaskView()
-                            .configured(modelContext: modelContext, task: task)
+                            .configured(task: task)
                     }
                 }
         }

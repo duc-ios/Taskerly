@@ -46,6 +46,9 @@
 		898F2E2F2C66335C00BD6470 /* TaskerlyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F2E2E2C66335C00BD6470 /* TaskerlyUITestsLaunchTests.swift */; };
 		898F2E412C66357600BD6470 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F2E402C66357600BD6470 /* Constants.swift */; };
 		8999B90C2C688D8D001ACD12 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999B90B2C688D8D001ACD12 /* NotificationsManager.swift */; };
+		8999B9122C689433001ACD12 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999B90D2C689433001ACD12 /* Database.swift */; };
+		8999B9132C689433001ACD12 /* SwiftDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999B90E2C689433001ACD12 /* SwiftDatabase.swift */; };
+		8999B9152C689433001ACD12 /* TaskItemDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999B9102C689433001ACD12 /* TaskItemDB.swift */; };
 		89E129A92C677A7C00C05683 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E129A82C677A7C00C05683 /* TaskRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +113,9 @@
 		898F2E402C66357600BD6470 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8999B90A2C6818C7001ACD12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8999B90B2C688D8D001ACD12 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
+		8999B90D2C689433001ACD12 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		8999B90E2C689433001ACD12 /* SwiftDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDatabase.swift; sourceTree = "<group>"; };
+		8999B9102C689433001ACD12 /* TaskItemDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItemDB.swift; sourceTree = "<group>"; };
 		89E129A82C677A7C00C05683 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -344,8 +350,19 @@
 		898F2E452C66360300BD6470 /* Data Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8999B9112C689433001ACD12 /* SwiftDatabase */,
 			);
 			path = "Data Sources";
+			sourceTree = "<group>";
+		};
+		8999B9112C689433001ACD12 /* SwiftDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				8999B90D2C689433001ACD12 /* Database.swift */,
+				8999B90E2C689433001ACD12 /* SwiftDatabase.swift */,
+				8999B9102C689433001ACD12 /* TaskItemDB.swift */,
+			);
+			path = SwiftDatabase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,6 +528,8 @@
 				897D60722C66868F007EADB4 /* TaskDetailPresenter.swift in Sources */,
 				897D60732C66868F007EADB4 /* TaskDetailDataStore.swift in Sources */,
 				897D60742C66868F007EADB4 /* TaskDetailInteractor.swift in Sources */,
+				8999B9122C689433001ACD12 /* Database.swift in Sources */,
+				8999B9132C689433001ACD12 /* SwiftDatabase.swift in Sources */,
 				897D60752C66868F007EADB4 /* TaskDetailView.swift in Sources */,
 				897D60992C670EC8007EADB4 /* ValuePicker.swift in Sources */,
 				897D60762C66868F007EADB4 /* TaskDetailModel.swift in Sources */,
@@ -523,6 +542,7 @@
 				897D609B2C672183007EADB4 /* Haptic.swift in Sources */,
 				897D60832C668BA3007EADB4 /* CreateTaskModel.swift in Sources */,
 				897D60842C668BA3007EADB4 /* CreateTaskConfigurator.swift in Sources */,
+				8999B9152C689433001ACD12 /* TaskItemDB.swift in Sources */,
 				898F2E142C66335A00BD6470 /* TaskItem.swift in Sources */,
 				898F2E102C66335A00BD6470 /* TaskerlyApp.swift in Sources */,
 				893CAD3F2C664AEA004BE5AB /* TaskListDataStore.swift in Sources */,

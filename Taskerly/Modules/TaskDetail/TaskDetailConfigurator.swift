@@ -9,9 +9,7 @@
 import Foundation
 
 extension TaskDetailView {
-    func configured(
-        task: TaskItem
-    ) -> TaskDetailView {
+    func configured(task: TaskItem) -> TaskDetailView {
         var view = self
         let presenter = TaskDetailPresenter(view: view)
         let interactor = TaskDetailInteractor(presenter: presenter)

@@ -153,14 +153,9 @@ struct CreateTaskView: View {
 
 #if DEBUG
 #Preview {
-    // swiftlint:disable:next force_try
-    let container = try! ModelContainer(
-        for: TaskItem.self,
-        configurations: .init(isStoredInMemoryOnly: true)
-    )
     return NavigationStack {
-        CreateTaskView()
-            .configured(modelContext: container.mainContext)
+        // swiftlint:disable:next force_try
+        CreateTaskView().configured(database: try! TaskItemDB(useInMemoryStore: true))
     }
 }
 #endif

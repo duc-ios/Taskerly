@@ -75,6 +75,8 @@ struct TaskListView: View {
 
     @Environment(\.safeAreaInsets) private var safeAreaInsets
 
+    var createAction: VoidCallback?
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             VStack(spacing: 0) {
@@ -85,7 +87,7 @@ struct TaskListView: View {
 
                     Spacer()
 
-                    LinearButton(label: { Text("+ Add Task") }, action: {
+                    LinearButton(label: { Text("+ Add Task") }, action: createAction ?? {
                         Router.shared.navigate(to: .create)
                     })
                 }
@@ -157,6 +159,7 @@ struct TaskListView: View {
         .ignoresSafeArea(edges: .top)
         .navigationBarBackButtonHidden(true)
         .onAppear {
+            interactor.getGreeting(request: .init(date: Date()))
             interactor.fetchTasks(request: .init(status: store.tab.toStatus()))
         }
     }
@@ -164,14 +167,18 @@ struct TaskListView: View {
 
 #if DEBUG
 #Preview {
-    // swiftlint:disable:next force_try
-    let container = try! ModelContainer(
-        for: TaskItem.self,
-        configurations: .init(isStoredInMemoryOnly: true)
-    )
     return NavigationView {
-        TaskListView()
-            .configured(modelContext: container.mainContext)
+        // swiftlint:disable:next force_try
+        let database = try! TaskItemDB(useInMemoryStore: true)
+        var view = TaskListView()
+        let presenter = TaskListPresenter(view: view)
+        let interactor = TaskListInteractor(presenter: presenter, database: database)
+        view.interactor = interactor
+        view.createAction = {
+            try? database.create(TaskItem(timestamp: Date(), name: "Task"))
+            interactor.fetchTasks(request: .init())
+        }
+        return view
     }
 }
 #endif

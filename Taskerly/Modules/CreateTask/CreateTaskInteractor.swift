@@ -17,10 +17,9 @@ protocol CreateTaskBusinessLogic {
 }
 
 class CreateTaskInteractor {
-    init(presenter: CreateTaskPresentationLogic,
-         modelContext: ModelContext) {
+    init(presenter: CreateTaskPresentationLogic, database: TaskItemDB? = nil) {
         self.presenter = presenter
-        self.repository = LocalTaskRepository(modelContext: modelContext)
+        self.repository = LocalTaskRepository(database: database)
     }
 
     private let presenter: CreateTaskPresentationLogic
@@ -56,7 +55,7 @@ extension CreateTaskInteractor: CreateTaskBusinessLogic {
             if let taskToUpdate = request.task {
                 task = try repository.update(task: taskToUpdate, formFields: request.formFields)
             } else {
-                task = repository.createTask(with: request.formFields)
+                task = try repository.createTask(with: request.formFields)
             }
             if request.formFields.reminder != .none {
                 let content = UNMutableNotificationContent()

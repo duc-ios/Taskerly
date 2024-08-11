@@ -10,17 +10,11 @@ import Foundation
 import SwiftData
 
 extension TaskListView {
-    func configured(
-        modelContext: ModelContext
-    ) -> TaskListView {
+    func configured(database: TaskItemDB? = nil) -> TaskListView {
         var view = self
         let presenter = TaskListPresenter(view: view)
-        let interactor = TaskListInteractor(
-            presenter: presenter,
-            modelContext: modelContext
-        )
+        let interactor = TaskListInteractor(presenter: presenter, database: database)
         view.interactor = interactor
-        interactor.getGreeting(request: .init(date: Date()))
         return view
     }
 }

@@ -108,43 +108,43 @@ extension Optional: ToStringProtocol where Wrapped == TaskItem.Status {
     }
 }
 
-extension TaskItem: Codable {
-    enum CodingKeys: CodingKey {
-        case timestamp,
-             name,
-             desc,
-             category,
-             priority,
-             status,
-             reminder,
-             order
-    }
-
-    convenience init(from decoder: Decoder) throws {
-        self.init()
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        timestamp = try container.decode(Date.self, forKey: .timestamp)
-        name = try container.decode(String.self, forKey: .name)
-        desc = try container.decode(String.self, forKey: .desc)
-        rawCategory = try container.decode(String.self, forKey: .category)
-        rawPriority = try container.decode(Int.self, forKey: .priority)
-        rawStatus = try container.decode(Int.self, forKey: .status)
-        rawReminder = try container.decode(Int.self, forKey: .reminder)
-        order = try container.decode(Int.self, forKey: .order)
-    }
-
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(timestamp, forKey: .timestamp)
-        try container.encode(name, forKey: .name)
-        try container.encode(desc, forKey: .desc)
-        try container.encode(rawCategory, forKey: .category)
-        try container.encode(rawPriority, forKey: .priority)
-        try container.encode(rawStatus, forKey: .status)
-        try container.encode(rawReminder, forKey: .reminder)
-        try container.encode(order, forKey: .order)
-    }
-}
+// extension TaskItem: Codable {
+//    enum CodingKeys: CodingKey {
+//        case timestamp,
+//             name,
+//             desc,
+//             category,
+//             priority,
+//             status,
+//             reminder,
+//             order
+//    }
+//
+//    convenience init(from decoder: Decoder) throws {
+//        self.init()
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        timestamp = try container.decode(Date.self, forKey: .timestamp)
+//        name = try container.decode(String.self, forKey: .name)
+//        desc = try container.decode(String.self, forKey: .desc)
+//        rawCategory = try container.decode(String.self, forKey: .category)
+//        rawPriority = try container.decode(Int.self, forKey: .priority)
+//        rawStatus = try container.decode(Int.self, forKey: .status)
+//        rawReminder = try container.decode(Int.self, forKey: .reminder)
+//        order = try container.decode(Int.self, forKey: .order)
+//    }
+//
+//    func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//        try container.encode(timestamp, forKey: .timestamp)
+//        try container.encode(name, forKey: .name)
+//        try container.encode(desc, forKey: .desc)
+//        try container.encode(rawCategory, forKey: .category)
+//        try container.encode(rawPriority, forKey: .priority)
+//        try container.encode(rawStatus, forKey: .status)
+//        try container.encode(rawReminder, forKey: .reminder)
+//        try container.encode(order, forKey: .order)
+//    }
+// }
 
 enum TaskCategory: Codable {
     case personal, work, custom(String)

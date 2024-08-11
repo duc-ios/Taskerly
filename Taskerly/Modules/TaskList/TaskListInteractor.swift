@@ -19,10 +19,9 @@ protocol TaskListBusinessLogic {
 }
 
 class TaskListInteractor {
-    init(presenter: TaskListPresentationLogic,
-         modelContext: ModelContext) {
+    init(presenter: TaskListPresentationLogic, database: TaskItemDB? = nil) {
         self.presenter = presenter
-        self.repository = LocalTaskRepository(modelContext: modelContext)
+        self.repository = LocalTaskRepository(database: database)
     }
 
     private let presenter: TaskListPresentationLogic
@@ -69,12 +68,17 @@ extension TaskListInteractor: TaskListBusinessLogic {
     }
 
     func deleteTask(request: TaskList.DeleteTasks.Request) {
-        repository.delete(task: request.task)
-        tasks.removeAll(where: { $0.id == request.task.id })
-        presenter.presentTasks(response: .init(
-            tab: tab,
-            tasks: tasks
-        ))
+        do {
+            try repository.delete(task: request.task)
+            tasks.removeAll(where: { $0.id == request.task.id })
+            presenter.presentTasks(response: .init(
+                tab: tab,
+                tasks: tasks
+            ))
+        } catch {
+            debugPrint("Delete Failed", error)
+            presenter.presentError(response: .init(error: error))
+        }
     }
 
     func moveTasks(indices: IndexSet, newOffset: Int) {

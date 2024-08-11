@@ -10,48 +10,38 @@ import SwiftUI
 
 protocol TaskRepository {
     func fetch(status: TaskItem.Status?) throws -> [TaskItem]
-    func delete(task: TaskItem)
-    func createTask(with formFields: CreateTaskFormField) -> TaskItem
+    func delete(task: TaskItem) throws
+    func createTask(with formFields: CreateTaskFormField) throws -> TaskItem
     func update(task: TaskItem, formFields: CreateTaskFormField) throws -> TaskItem
     func updateOrder(tasks: [TaskItem]) throws
     func mark(task: TaskItem, status: TaskItem.Status) throws
 }
 
 class LocalTaskRepository: TaskRepository {
-    let modelContext: ModelContext
+    private let database: TaskItemDB
 
-    init(modelContext: ModelContext) {
-        self.modelContext = modelContext
-    }
-
-    private func safeSave(task: TaskItem) throws {
-        if let modelContext = task.modelContext {
-            try modelContext.save()
-        } else {
-            modelContext.insert(task)
-        }
+    init(database: TaskItemDB? = nil) {
+        self.database = database ?? TaskItemDB()
     }
 
     func fetch(status: TaskItem.Status? = nil) throws -> [TaskItem] {
-        let descriptor: FetchDescriptor<TaskItem>
         if let status = status {
-            descriptor = FetchDescriptor<TaskItem>(
+            return try database.read(
                 predicate: #Predicate { $0.rawStatus == status.rawValue },
-                sortBy: [SortDescriptor(\.order), SortDescriptor(\.timestamp)]
+                sortBy: SortDescriptor(\.order), SortDescriptor(\.timestamp)
             )
         } else {
-            descriptor = FetchDescriptor<TaskItem>(
-                sortBy: [SortDescriptor(\.order), SortDescriptor(\.timestamp)]
+            return try database.read(
+                sortBy: SortDescriptor(\.order), SortDescriptor(\.timestamp)
             )
         }
-        return try modelContext.fetch(descriptor)
     }
 
-    func delete(task: TaskItem) {
-        modelContext.delete(task)
+    func delete(task: TaskItem) throws {
+        try database.delete(task)
     }
 
-    func createTask(with formFields: CreateTaskFormField) -> TaskItem {
+    func createTask(with formFields: CreateTaskFormField) throws -> TaskItem {
         var category = TaskCategory(rawValue: formFields.category) ?? .personal
         if formFields.category == "Custom" {
             category = .custom(formFields.customCategory)
@@ -66,7 +56,7 @@ class LocalTaskRepository: TaskRepository {
             reminder: formFields.reminder,
             order: 0
         )
-        modelContext.insert(task)
+        try database.create(task)
         return task
     }
 
@@ -81,19 +71,19 @@ class LocalTaskRepository: TaskRepository {
         task.rawCategory = category.rawValue
         task.rawPriority = formFields.priority.rawValue
         task.rawReminder = formFields.reminder.rawValue
-        try safeSave(task: task)
+        try database.create(task)
         return task
     }
 
     func updateOrder(tasks: [TaskItem]) throws {
-        try tasks.enumerated().forEach { task in
-            task.element.order = task.offset
-            try safeSave(task: task.element)
+        try tasks.enumerated().forEach {
+            $0.element.order = $0.offset
+            try database.create($0.element)
         }
     }
 
     func mark(task: TaskItem, status: TaskItem.Status) throws {
         task.rawStatus = status.rawValue
-        try safeSave(task: task)
+        try database.create(task)
     }
 }
