@@ -45,6 +45,7 @@
 		898F2E2D2C66335C00BD6470 /* TaskerlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F2E2C2C66335C00BD6470 /* TaskerlyUITests.swift */; };
 		898F2E2F2C66335C00BD6470 /* TaskerlyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F2E2E2C66335C00BD6470 /* TaskerlyUITestsLaunchTests.swift */; };
 		898F2E412C66357600BD6470 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F2E402C66357600BD6470 /* Constants.swift */; };
+		8999B90C2C688D8D001ACD12 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999B90B2C688D8D001ACD12 /* NotificationsManager.swift */; };
 		89E129A92C677A7C00C05683 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E129A82C677A7C00C05683 /* TaskRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		898F2E2E2C66335C00BD6470 /* TaskerlyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskerlyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		898F2E402C66357600BD6470 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8999B90A2C6818C7001ACD12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8999B90B2C688D8D001ACD12 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		89E129A82C677A7C00C05683 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,6 +300,7 @@
 				897D605E2C665143007EADB4 /* Greeting.swift */,
 				897D608D2C66951B007EADB4 /* Route.swift */,
 				897D609A2C672183007EADB4 /* Haptic.swift */,
+				8999B90B2C688D8D001ACD12 /* NotificationsManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				89E129A92C677A7C00C05683 /* TaskRepository.swift in Sources */,
 				897D60652C665E98007EADB4 /* Color+Extensions.swift in Sources */,
 				897D60672C666632007EADB4 /* SafeArea+Extensions.swift in Sources */,
+				8999B90C2C688D8D001ACD12 /* NotificationsManager.swift in Sources */,
 				897D60612C665A99007EADB4 /* SegmentedControl.swift in Sources */,
 				893CAD402C664AEA004BE5AB /* TaskListInteractor.swift in Sources */,
 			);

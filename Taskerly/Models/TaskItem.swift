@@ -60,7 +60,7 @@ final class TaskItem {
         }
     }
 
-    var id: String
+    @Attribute(.unique) let id: String
     var timestamp: Date
     var name: String
     var desc: String
