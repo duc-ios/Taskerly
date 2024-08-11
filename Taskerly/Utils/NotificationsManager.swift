@@ -15,11 +15,11 @@ class NotificationsManager: NSObject, UNUserNotificationCenterDelegate {
         center.delegate = NotificationsManager.shared
         center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if let error {
-                debugPrint("Notification Permission error", error)
+                logger.debug("Notification Permission error \(error)")
             } else if success {
-                debugPrint("Notification Permission granted")
+                logger.debug("Notification Permission granted")
             } else {
-                debugPrint("Notification Permission denied")
+                logger.debug("Notification Permission denied")
             }
         }
     }
@@ -28,7 +28,7 @@ class NotificationsManager: NSObject, UNUserNotificationCenterDelegate {
         _ center: UNUserNotificationCenter,
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        debugPrint("Notification willPresent", notification.request.content.userInfo)
+        logger.debug("Notification willPresent \(notification.request.content.userInfo)")
         completionHandler(.banner)
     }
 
@@ -36,7 +36,7 @@ class NotificationsManager: NSObject, UNUserNotificationCenterDelegate {
         _ center: UNUserNotificationCenter,
         didReceive response: UNNotificationResponse,
         withCompletionHandler completionHandler: @escaping () -> Void) {
-        debugPrint("Notification didReceive", response.notification.request.content.userInfo)
+        logger.debug("Notification didReceive \(response.notification.request.content.userInfo)")
         completionHandler()
     }
 }

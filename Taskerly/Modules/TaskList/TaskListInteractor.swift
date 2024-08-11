@@ -62,7 +62,7 @@ extension TaskListInteractor: TaskListBusinessLogic {
                 tasks: tasks
             ))
         } catch {
-            debugPrint("Fetch Failed", error)
+            logger.debug("Fetch Failed \(error)")
             presenter.presentError(response: .init(error: error))
         }
     }
@@ -76,7 +76,7 @@ extension TaskListInteractor: TaskListBusinessLogic {
                 tasks: tasks
             ))
         } catch {
-            debugPrint("Delete Failed", error)
+            logger.debug("Delete Failed \(error)")
             presenter.presentError(response: .init(error: error))
         }
     }
@@ -86,7 +86,7 @@ extension TaskListInteractor: TaskListBusinessLogic {
             tasks.move(fromOffsets: indices, toOffset: newOffset)
             try repository.updateOrder(tasks: tasks)
         } catch {
-            debugPrint("Move failed", error)
+            logger.debug("Move failed \(error)")
             presenter.presentError(response: .init(error: error))
         }
     }
@@ -100,7 +100,7 @@ extension TaskListInteractor: TaskListBusinessLogic {
             }
             presenter.presentTasks(response: .init(tab: tab, tasks: tasks))
         } catch {
-            debugPrint("Mark failed", error)
+            logger.debug("Mark failed \(error)")
             presenter.presentError(response: .init(error: error))
         }
     }

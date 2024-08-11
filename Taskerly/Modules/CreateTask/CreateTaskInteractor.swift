@@ -88,7 +88,7 @@ extension CreateTaskInteractor: CreateTaskBusinessLogic {
             }
             presenter.presentCreatedTask(response: .init())
         } catch {
-            debugPrint("Create error", error)
+            logger.debug("Create error \(error)")
             presenter.presentError(response: .init(error: error))
         }
     }
