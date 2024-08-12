@@ -70,9 +70,10 @@ extension TaskListView {
 }
 
 struct TaskListView: View {
-    @ObservedObject var store = TaskListDataStore()
     var interactor: TaskListBusinessLogic!
 
+    @ObservedObject var store = TaskListDataStore()
+    @EnvironmentObject var router: Router
     @Environment(\.safeAreaInsets) private var safeAreaInsets
 
     var createAction: VoidCallback?
@@ -88,7 +89,7 @@ struct TaskListView: View {
                     Spacer()
 
                     LinearButton(label: { Text("+ Add Task") }, action: createAction ?? {
-                        Router.shared.navigate(to: .create)
+                        router.navigate(to: .create)
                     })
                 }
 
@@ -167,7 +168,7 @@ struct TaskListView: View {
 
 #if DEBUG
 #Preview {
-    return NavigationView {
+    NavigationStack {
         // swiftlint:disable:next force_try
         let database = try! TaskItemDB(useInMemoryStore: true)
         var view = TaskListView()

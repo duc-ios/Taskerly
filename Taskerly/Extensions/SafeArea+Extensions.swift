@@ -16,13 +16,13 @@ extension UIApplication {
     }
 }
 
-private struct SafeAreaInsetsKey: EnvironmentKey {
-    static var defaultValue: EdgeInsets {
-        UIApplication.shared.keyWindow?.safeAreaInsets.swiftUiInsets ?? EdgeInsets()
-    }
-}
-
 extension EnvironmentValues {
+    private struct SafeAreaInsetsKey: EnvironmentKey {
+        static var defaultValue: EdgeInsets {
+            UIApplication.shared.keyWindow?.safeAreaInsets.swiftUiInsets ?? EdgeInsets()
+        }
+    }
+
     var safeAreaInsets: EdgeInsets {
         self[SafeAreaInsetsKey.self]
     }

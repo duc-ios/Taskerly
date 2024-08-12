@@ -33,6 +33,7 @@ struct OnboardingContentView: View {
 }
 
 struct OnboardingView: View {
+    @EnvironmentObject var router: Router
     @State private var selectedIndex = 0
 
     var body: some View {
@@ -67,7 +68,7 @@ struct OnboardingView: View {
             PageControl(totalIndex: 3, selectedIndex: $selectedIndex).padding()
 
             Button(action: {
-                Router.shared.pop(to: .list)
+                router.pop(to: .list)
             }, label: {
                 Text("Get Started")
             })
@@ -80,6 +81,26 @@ struct OnboardingView: View {
         }
         .frame(maxHeight: .infinity)
         .background(Color.gradient)
+        .onAppear {
+            if UserSettings.isOnboarded {
+                router.pop(to: .list)
+            } else {
+                UserSettings.isOnboarded = true
+            }
+        }
+        .navigationDestination(for: Route.self) {
+            switch $0 {
+            case .list:
+                TaskListView()
+                    .configured()
+            case .create:
+                CreateTaskView()
+                    .configured()
+            case .detail(let task):
+                CreateTaskView()
+                    .configured(task: task)
+            }
+        }
     }
 }
 

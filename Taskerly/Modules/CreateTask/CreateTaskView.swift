@@ -38,7 +38,7 @@ extension CreateTaskView: CreateTaskDisplayLogic {
     }
 
     func displayCreatedTask(viewModel: CreateTask.CreateTask.ViewModel) {
-        Router.shared.pop(to: .list)
+        store.router?.pop(to: .list)
     }
 }
 
@@ -46,7 +46,8 @@ struct CreateTaskView: View {
     var interactor: CreateTaskBusinessLogic!
 
     @ObservedObject var store = CreateTaskDataStore()
-    @Environment(\.safeAreaInsets) private var safeAreaInsets
+    @EnvironmentObject var router: Router
+   @Environment(\.safeAreaInsets) private var safeAreaInsets
 
     init() {
         let standardAppearance = UINavigationBarAppearance()
@@ -66,7 +67,8 @@ struct CreateTaskView: View {
     }
 
     var body: some View {
-        ScrollView {
+        store.router = router
+        return ScrollView {
             VStack(alignment: .leading) {
                 Color.clear.frame(height: safeAreaInsets.top + 22)
 
@@ -136,7 +138,7 @@ struct CreateTaskView: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button(action: {
-                    Router.shared.pop()
+                    router.pop(to: .list)
                 }, label: {
                     Image(systemName: "chevron.left")
                         .font(.body.weight(.semibold))
@@ -157,7 +159,7 @@ struct CreateTaskView: View {
 
 #if DEBUG
 #Preview {
-    return NavigationStack {
+    NavigationStack {
         // swiftlint:disable:next force_try
         CreateTaskView().configured(database: try! TaskItemDB(useInMemoryStore: true))
     }

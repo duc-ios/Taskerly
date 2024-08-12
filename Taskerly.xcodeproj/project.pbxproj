@@ -13,6 +13,7 @@
 		893CAD412C664AEA004BE5AB /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CAD3A2C664AEA004BE5AB /* TaskListModel.swift */; };
 		893CAD422C664AEA004BE5AB /* TaskListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CAD3B2C664AEA004BE5AB /* TaskListPresenter.swift */; };
 		893CAD432C664AEA004BE5AB /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CAD3C2C664AEA004BE5AB /* TaskListView.swift */; };
+		8954D8132C6A39DD00DA9CBB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8954D8122C6A39DD00DA9CBB /* Router.swift */; };
 		897D605F2C665143007EADB4 /* Greeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D605E2C665143007EADB4 /* Greeting.swift */; };
 		897D60612C665A99007EADB4 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60602C665A99007EADB4 /* SegmentedControl.swift */; };
 		897D60632C665D64007EADB4 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60622C665D64007EADB4 /* GradientButton.swift */; };
@@ -79,6 +80,7 @@
 		893CAD3A2C664AEA004BE5AB /* TaskListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListModel.swift; sourceTree = "<group>"; };
 		893CAD3B2C664AEA004BE5AB /* TaskListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListPresenter.swift; sourceTree = "<group>"; };
 		893CAD3C2C664AEA004BE5AB /* TaskListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		8954D8122C6A39DD00DA9CBB /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		897D605E2C665143007EADB4 /* Greeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greeting.swift; sourceTree = "<group>"; };
 		897D60602C665A99007EADB4 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		897D60622C665D64007EADB4 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 			children = (
 				897D605E2C665143007EADB4 /* Greeting.swift */,
 				897D608D2C66951B007EADB4 /* Route.swift */,
+				8954D8122C6A39DD00DA9CBB /* Router.swift */,
 				897D609A2C672183007EADB4 /* Haptic.swift */,
 				8999B90B2C688D8D001ACD12 /* NotificationsManager.swift */,
 				8999B9192C68AA27001ACD12 /* UserSettings.swift */,
@@ -549,6 +552,7 @@
 				8999B9132C689433001ACD12 /* SwiftDatabase.swift in Sources */,
 				897D60752C66868F007EADB4 /* TaskDetailView.swift in Sources */,
 				897D60992C670EC8007EADB4 /* ValuePicker.swift in Sources */,
+				8954D8132C6A39DD00DA9CBB /* Router.swift in Sources */,
 				897D60762C66868F007EADB4 /* TaskDetailModel.swift in Sources */,
 				897D60972C66C560007EADB4 /* TaskDetailCard.swift in Sources */,
 				897D60772C66868F007EADB4 /* TaskDetailConfigurator.swift in Sources */,

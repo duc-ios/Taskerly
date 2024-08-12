@@ -9,33 +9,14 @@ import SwiftData
 import SwiftUI
 
 struct AppView: View {
-    @State private var router = Router.shared
+    @ObservedObject var router = Router()
 
     var body: some View {
         NavigationStack(path: $router.path) {
             OnboardingView()
-                .onAppear {
-                    if UserSettings.isOnboarded {
-                        router.pop(to: .list)
-                    } else {
-                        UserSettings.isOnboarded = true
-                    }
-                }
-                .navigationDestination(for: Route.self) {
-                    switch $0 {
-                    case .list:
-                        TaskListView()
-                            .configured()
-                    case .create:
-                        CreateTaskView()
-                            .configured()
-                    case .detail(let task):
-                        CreateTaskView()
-                            .configured(task: task)
-                    }
-                }
         }
         .tint(Color.gradient)
+        .environmentObject(router)
     }
 }
 

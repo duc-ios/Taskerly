@@ -8,6 +8,8 @@
 import Foundation
 
 final class CreateTaskDataStore: ObservableObject {
+    var router: Router?
+
     var task: TaskItem?
 
     @Published var isLoading = false
