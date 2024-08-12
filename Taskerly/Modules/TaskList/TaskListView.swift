@@ -88,9 +88,10 @@ struct TaskListView: View {
 
                     Spacer()
 
-                    LinearButton(label: { Text("+ Add Task") }, action: createAction ?? {
-                        router.navigate(to: .create)
-                    })
+                    Button(action: createAction ?? {
+                        router.show(.create)
+                    }, label: { Text("+ Add Task") })
+                    .buttonStyle(LinearButtonStyle())
                 }
 
                 Spacer().frame(height: 24)

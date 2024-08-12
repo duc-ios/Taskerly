@@ -16,7 +16,7 @@
 		8954D8132C6A39DD00DA9CBB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8954D8122C6A39DD00DA9CBB /* Router.swift */; };
 		897D605F2C665143007EADB4 /* Greeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D605E2C665143007EADB4 /* Greeting.swift */; };
 		897D60612C665A99007EADB4 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60602C665A99007EADB4 /* SegmentedControl.swift */; };
-		897D60632C665D64007EADB4 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60622C665D64007EADB4 /* GradientButton.swift */; };
+		897D60632C665D64007EADB4 /* LinearButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60622C665D64007EADB4 /* LinearButtonStyle.swift */; };
 		897D60652C665E98007EADB4 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60642C665E98007EADB4 /* Color+Extensions.swift */; };
 		897D60672C666632007EADB4 /* SafeArea+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60662C666632007EADB4 /* SafeArea+Extensions.swift */; };
 		897D606A2C666B18007EADB4 /* TaskListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60692C666B18007EADB4 /* TaskListCard.swift */; };
@@ -83,7 +83,7 @@
 		8954D8122C6A39DD00DA9CBB /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		897D605E2C665143007EADB4 /* Greeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greeting.swift; sourceTree = "<group>"; };
 		897D60602C665A99007EADB4 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
-		897D60622C665D64007EADB4 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
+		897D60622C665D64007EADB4 /* LinearButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearButtonStyle.swift; sourceTree = "<group>"; };
 		897D60642C665E98007EADB4 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		897D60662C666632007EADB4 /* SafeArea+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafeArea+Extensions.swift"; sourceTree = "<group>"; };
 		897D60692C666B18007EADB4 /* TaskListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCard.swift; sourceTree = "<group>"; };
@@ -334,7 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				897D60602C665A99007EADB4 /* SegmentedControl.swift */,
-				897D60622C665D64007EADB4 /* GradientButton.swift */,
+				897D60622C665D64007EADB4 /* LinearButtonStyle.swift */,
 				8999B91B2C68BC51001ACD12 /* PageControl.swift */,
 			);
 			path = Views;
@@ -576,7 +576,7 @@
 				897D608E2C66951B007EADB4 /* Route.swift in Sources */,
 				893CAD412C664AEA004BE5AB /* TaskListModel.swift in Sources */,
 				897D605F2C665143007EADB4 /* Greeting.swift in Sources */,
-				897D60632C665D64007EADB4 /* GradientButton.swift in Sources */,
+				897D60632C665D64007EADB4 /* LinearButtonStyle.swift in Sources */,
 				89E129A92C677A7C00C05683 /* TaskRepository.swift in Sources */,
 				897D60652C665E98007EADB4 /* Color+Extensions.swift in Sources */,
 				8999B91C2C68BC51001ACD12 /* PageControl.swift in Sources */,

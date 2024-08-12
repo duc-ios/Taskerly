@@ -115,17 +115,19 @@ struct CreateTaskView: View {
 
                 Spacer().frame(height: 24)
 
-                LinearButton(label: {
-                    Text(store.buttonTitle)
-                        .font(.body.weight(.semibold))
-                        .frame(maxWidth: .infinity)
-                }, action: {
+                Button(action: {
                     interactor.createTask(request: .init(
                         task: store.task,
                         formFields: store.formFields
                     ))
-                }, isDisabled: store.isButtonDisabled)
-                    .listRowBackground(Color.clear)
+                }, label: {
+                    Text(store.buttonTitle)
+                        .font(.body.weight(.semibold))
+                        .frame(maxWidth: .infinity)
+                })
+                .buttonStyle(LinearButtonStyle())
+                .disabled(store.isButtonDisabled)
+                .listRowBackground(Color.clear)
             }
             .padding(.horizontal, 44)
         }
