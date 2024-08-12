@@ -14,6 +14,7 @@
 		893CAD422C664AEA004BE5AB /* TaskListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CAD3B2C664AEA004BE5AB /* TaskListPresenter.swift */; };
 		893CAD432C664AEA004BE5AB /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CAD3C2C664AEA004BE5AB /* TaskListView.swift */; };
 		8954D8132C6A39DD00DA9CBB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8954D8122C6A39DD00DA9CBB /* Router.swift */; };
+		8954D8152C6A3B2A00DA9CBB /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8954D8142C6A3B2A00DA9CBB /* String+Extensions.swift */; };
 		897D605F2C665143007EADB4 /* Greeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D605E2C665143007EADB4 /* Greeting.swift */; };
 		897D60612C665A99007EADB4 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60602C665A99007EADB4 /* SegmentedControl.swift */; };
 		897D60632C665D64007EADB4 /* LinearButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60622C665D64007EADB4 /* LinearButtonStyle.swift */; };
@@ -36,7 +37,6 @@
 		897D60942C66C4A7007EADB4 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60932C66C4A7007EADB4 /* Field.swift */; };
 		897D60972C66C560007EADB4 /* TaskDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60962C66C560007EADB4 /* TaskDetailCard.swift */; };
 		897D60992C670EC8007EADB4 /* ValuePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60982C670EC8007EADB4 /* ValuePicker.swift */; };
-		897D609B2C672183007EADB4 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D609A2C672183007EADB4 /* Haptic.swift */; };
 		898F2E102C66335A00BD6470 /* TaskerlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F2E0F2C66335A00BD6470 /* TaskerlyApp.swift */; };
 		898F2E122C66335A00BD6470 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F2E112C66335A00BD6470 /* AppView.swift */; };
 		898F2E142C66335A00BD6470 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F2E132C66335A00BD6470 /* TaskItem.swift */; };
@@ -81,6 +81,7 @@
 		893CAD3B2C664AEA004BE5AB /* TaskListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListPresenter.swift; sourceTree = "<group>"; };
 		893CAD3C2C664AEA004BE5AB /* TaskListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		8954D8122C6A39DD00DA9CBB /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8954D8142C6A3B2A00DA9CBB /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		897D605E2C665143007EADB4 /* Greeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greeting.swift; sourceTree = "<group>"; };
 		897D60602C665A99007EADB4 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		897D60622C665D64007EADB4 /* LinearButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearButtonStyle.swift; sourceTree = "<group>"; };
@@ -103,7 +104,6 @@
 		897D60932C66C4A7007EADB4 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		897D60962C66C560007EADB4 /* TaskDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailCard.swift; sourceTree = "<group>"; };
 		897D60982C670EC8007EADB4 /* ValuePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuePicker.swift; sourceTree = "<group>"; };
-		897D609A2C672183007EADB4 /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		898F2E0C2C66335A00BD6470 /* Taskerly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taskerly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		898F2E0F2C66335A00BD6470 /* TaskerlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskerlyApp.swift; sourceTree = "<group>"; };
 		898F2E112C66335A00BD6470 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -304,6 +304,7 @@
 			children = (
 				897D60642C665E98007EADB4 /* Color+Extensions.swift */,
 				897D60662C666632007EADB4 /* SafeArea+Extensions.swift */,
+				8954D8142C6A3B2A00DA9CBB /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -314,7 +315,6 @@
 				897D605E2C665143007EADB4 /* Greeting.swift */,
 				897D608D2C66951B007EADB4 /* Route.swift */,
 				8954D8122C6A39DD00DA9CBB /* Router.swift */,
-				897D609A2C672183007EADB4 /* Haptic.swift */,
 				8999B90B2C688D8D001ACD12 /* NotificationsManager.swift */,
 				8999B9192C68AA27001ACD12 /* UserSettings.swift */,
 			);
@@ -559,9 +559,9 @@
 				8999B91A2C68AA27001ACD12 /* UserSettings.swift in Sources */,
 				897D607F2C668BA3007EADB4 /* CreateTaskPresenter.swift in Sources */,
 				897D60802C668BA3007EADB4 /* CreateTaskDataStore.swift in Sources */,
+				8954D8152C6A3B2A00DA9CBB /* String+Extensions.swift in Sources */,
 				897D60812C668BA3007EADB4 /* CreateTaskInteractor.swift in Sources */,
 				897D60822C668BA3007EADB4 /* CreateTaskView.swift in Sources */,
-				897D609B2C672183007EADB4 /* Haptic.swift in Sources */,
 				897D60832C668BA3007EADB4 /* CreateTaskModel.swift in Sources */,
 				897D60842C668BA3007EADB4 /* CreateTaskConfigurator.swift in Sources */,
 				8999B9152C689433001ACD12 /* TaskItemDB.swift in Sources */,

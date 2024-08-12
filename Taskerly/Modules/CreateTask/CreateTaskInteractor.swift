@@ -43,9 +43,9 @@ extension CreateTaskInteractor: CreateTaskBusinessLogic {
 
     func validateFormFields(request: CreateTask.ValidateFormFields.Request) {
         let formFields = request.formFields
-        let isValid = !formFields.name.isEmpty
-            && !formFields.category.isEmpty
-            && (formFields.category != "Custom" || !formFields.customCategory.isEmpty)
+        let isValid = !formFields.name.isBlank
+            && !formFields.category.isBlank
+            && (formFields.category != "Custom" || !formFields.customCategory.isBlank)
         presenter.presentValidateFormFields(respose: .init(isValid: isValid))
     }
 

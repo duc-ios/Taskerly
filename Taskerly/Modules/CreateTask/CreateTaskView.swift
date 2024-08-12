@@ -152,8 +152,8 @@ struct CreateTaskView: View {
 //                .background(.yellow)
             }
         }
+        .sensoryFeedback(.success, trigger: store.formFields)
         .onChange(of: store.formFields) {
-            Haptic.fire()
             interactor.validateFormFields(request: .init(formFields: store.formFields))
         }
     }

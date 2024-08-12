@@ -64,9 +64,7 @@ struct SegmentedControl<T: SegmentedControlItem>: View {
             .cornerRadius(cRadius)
         }
         .frame(height: 44)
-        .onChange(of: selected) { _, _ in
-            Haptic.fire()
-        }
+        .sensoryFeedback(.success, trigger: selected)
     }
 }
 
