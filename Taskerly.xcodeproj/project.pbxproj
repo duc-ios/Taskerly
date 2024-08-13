@@ -15,6 +15,7 @@
 		893CAD432C664AEA004BE5AB /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CAD3C2C664AEA004BE5AB /* TaskListView.swift */; };
 		8954D8132C6A39DD00DA9CBB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8954D8122C6A39DD00DA9CBB /* Router.swift */; };
 		8954D8152C6A3B2A00DA9CBB /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8954D8142C6A3B2A00DA9CBB /* String+Extensions.swift */; };
+		8954D8272C6B757A00DA9CBB /* GreetingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8954D8262C6B757A00DA9CBB /* GreetingTests.swift */; };
 		897D605F2C665143007EADB4 /* Greeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D605E2C665143007EADB4 /* Greeting.swift */; };
 		897D60612C665A99007EADB4 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60602C665A99007EADB4 /* SegmentedControl.swift */; };
 		897D60632C665D64007EADB4 /* LinearButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D60622C665D64007EADB4 /* LinearButtonStyle.swift */; };
@@ -82,6 +83,7 @@
 		893CAD3C2C664AEA004BE5AB /* TaskListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		8954D8122C6A39DD00DA9CBB /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8954D8142C6A3B2A00DA9CBB /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		8954D8262C6B757A00DA9CBB /* GreetingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingTests.swift; sourceTree = "<group>"; };
 		897D605E2C665143007EADB4 /* Greeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greeting.swift; sourceTree = "<group>"; };
 		897D60602C665A99007EADB4 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		897D60622C665D64007EADB4 /* LinearButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearButtonStyle.swift; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 				893CAD3B2C664AEA004BE5AB /* TaskListPresenter.swift */,
 			);
 			path = TaskList;
+			sourceTree = "<group>";
+		};
+		8954D8252C6B755500DA9CBB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8954D8262C6B757A00DA9CBB /* GreetingTests.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		897D60682C666B12007EADB4 /* Views */ = {
@@ -269,6 +279,7 @@
 		898F2E212C66335C00BD6470 /* TaskerlyTests */ = {
 			isa = PBXGroup;
 			children = (
+				8954D8252C6B755500DA9CBB /* Utils */,
 				898F2E222C66335C00BD6470 /* TaskerlyTests.swift */,
 			);
 			path = TaskerlyTests;
@@ -591,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8954D8272C6B757A00DA9CBB /* GreetingTests.swift in Sources */,
 				898F2E232C66335C00BD6470 /* TaskerlyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -816,7 +828,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R779U6F348;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ios.duc.TaskerlyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -836,7 +847,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R779U6F348;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ios.duc.TaskerlyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
