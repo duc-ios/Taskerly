@@ -19,7 +19,7 @@ enum CreateTask {
         }
 
         struct ViewModel {
-            var message: String
+            var error: AppError
         }
     }
 

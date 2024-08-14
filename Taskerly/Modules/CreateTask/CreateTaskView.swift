@@ -22,7 +22,7 @@ extension CreateTaskView: CreateTaskDisplayLogic {
     }
 
     func displayError(viewModel: CreateTask.ShowError.ViewModel) {
-        store.errorMessage = viewModel.message
+        store.error = viewModel.error
         store.displayError = true
     }
 
@@ -156,6 +156,12 @@ struct CreateTaskView: View {
         .onChange(of: store.formFields) {
             interactor.validateFormFields(request: .init(formFields: store.formFields))
         }
+        .alert(
+            isPresented: $store.displayError,
+            error: store.error,
+            actions: { _ in Button("OK") {} },
+            message: { Text($0.recoverySuggestion ?? "") }
+        )
     }
 }
 

@@ -13,7 +13,7 @@ final class CreateTaskDataStore: ObservableObject {
     var task: TaskItem?
 
     @Published var isLoading = false
-    @Published var errorMessage: String?
+    @Published var error: AppError?
     @Published var displayError = false
 
     @Published var formFields = CreateTaskFormField()

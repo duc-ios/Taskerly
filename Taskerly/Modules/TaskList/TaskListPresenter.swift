@@ -28,7 +28,7 @@ extension TaskListPresenter: TaskListPresentationLogic {
     }
 
     func presentError(response: TaskList.ShowError.Response) {
-        view.displayError(viewModel: .init(message: (response.error as NSError).description))
+        view.displayError(viewModel: .init(error: .error(response.error)))
     }
 
     func presentGreeting(response: TaskList.GetGreeting.Response) {

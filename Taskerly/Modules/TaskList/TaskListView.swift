@@ -21,7 +21,7 @@ extension TaskListView: TaskListDisplayLogic {
     }
 
     func displayError(viewModel: TaskList.ShowError.ViewModel) {
-        store.errorMessage = viewModel.message
+        store.error = viewModel.error
         store.displayError = true
     }
 
@@ -164,6 +164,12 @@ struct TaskListView: View {
             interactor.getGreeting(request: .init(date: Date()))
             interactor.fetchTasks(request: .init(status: store.tab.toStatus()))
         }
+        .alert(
+            isPresented: $store.displayError,
+            error: store.error,
+            actions: { _ in Button("OK") {} },
+            message: { Text($0.recoverySuggestion ?? "") }
+        )
     }
 }
 

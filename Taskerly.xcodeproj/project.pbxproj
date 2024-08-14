@@ -54,6 +54,7 @@
 		8999B9182C68A801001ACD12 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999B9172C68A801001ACD12 /* OnboardingView.swift */; };
 		8999B91A2C68AA27001ACD12 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999B9192C68AA27001ACD12 /* UserSettings.swift */; };
 		8999B91C2C68BC51001ACD12 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999B91B2C68BC51001ACD12 /* PageControl.swift */; };
+		89A20EC42C6CC9E10094AE62 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A20EC32C6CC9E10094AE62 /* AppError.swift */; };
 		89E129A92C677A7C00C05683 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E129A82C677A7C00C05683 /* TaskRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +127,7 @@
 		8999B9172C68A801001ACD12 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8999B9192C68AA27001ACD12 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		8999B91B2C68BC51001ACD12 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		89A20EC32C6CC9E10094AE62 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		89E129A82C677A7C00C05683 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				898F2E132C66335A00BD6470 /* TaskItem.swift */,
+				89A20EC32C6CC9E10094AE62 /* AppError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				8999B91A2C68AA27001ACD12 /* UserSettings.swift in Sources */,
 				897D607F2C668BA3007EADB4 /* CreateTaskPresenter.swift in Sources */,
 				897D60802C668BA3007EADB4 /* CreateTaskDataStore.swift in Sources */,
+				89A20EC42C6CC9E10094AE62 /* AppError.swift in Sources */,
 				8954D8152C6A3B2A00DA9CBB /* String+Extensions.swift in Sources */,
 				897D60812C668BA3007EADB4 /* CreateTaskInteractor.swift in Sources */,
 				897D60822C668BA3007EADB4 /* CreateTaskView.swift in Sources */,

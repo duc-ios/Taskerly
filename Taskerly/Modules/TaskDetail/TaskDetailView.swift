@@ -18,7 +18,7 @@ extension TaskDetailView: TaskDetailDisplayLogic {
     }
 
     func displayError(viewModel: TaskDetail.ShowError.ViewModel) {
-        store.errorMessage = viewModel.message
+        store.error = viewModel.error
         store.displayError = true
     }
 }
@@ -47,42 +47,50 @@ struct TaskDetailView: View {
     }
 
     var body: some View {
-        if let task = store.task {
-            ScrollView {
-                VStack(alignment: .leading) {
-                    Color.clear
-                        .frame(height: safeAreaInsets.top + 44)
-                    TaskDetailCard(title: "Name", detail: task.name)
-                    TaskDetailCard(
-                        title: "Due date",
-                        detail: task.timestamp.formatted(date: .numeric, time: .shortened)
-                    )
-                    Spacer().frame(height: 12)
+        Group {
+            if let task = store.task {
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        Color.clear
+                            .frame(height: safeAreaInsets.top + 44)
+                        TaskDetailCard(title: "Name", detail: task.name)
+                        TaskDetailCard(
+                            title: "Due date",
+                            detail: task.timestamp.formatted(date: .numeric, time: .shortened)
+                        )
+                        Spacer().frame(height: 12)
+                    }
+                    .foregroundStyle(.white)
+                    .padding()
+                    .background(Color.gradient)
+
+                    Color.white
+                        .clipShape(.rect(topLeadingRadius: 12, topTrailingRadius: 12))
+                        .offset(.init(width: 0, height: -24))
+                        .frame(height: 24)
+
+                    VStack(alignment: .leading) {
+                        Text("Description")
+                            .font(.caption)
+                        Text(task.desc)
+                        TaskDetailCard(title: "Priority", detail: task.priority.toString())
+                        TaskDetailCard(title: "Category", detail: task.category.toString())
+                        TaskDetailCard(title: "Status", detail: task.status.toString())
+                    }.padding(.horizontal, 44)
                 }
-                .foregroundStyle(.white)
-                .padding()
-                .background(Color.gradient)
-
-                Color.white
-                    .clipShape(.rect(topLeadingRadius: 12, topTrailingRadius: 12))
-                    .offset(.init(width: 0, height: -24))
-                    .frame(height: 24)
-
-                VStack(alignment: .leading) {
-                    Text("Description")
-                        .font(.caption)
-                    Text(task.desc)
-                    TaskDetailCard(title: "Priority", detail: task.priority.toString())
-                    TaskDetailCard(title: "Category", detail: task.category.toString())
-                    TaskDetailCard(title: "Status", detail: task.status.toString())
-                }.padding(.horizontal, 44)
+                .ignoresSafeArea(edges: .top)
+                .navigationTitle("Task")
+                .navigationBarTitleDisplayMode(.inline)
+            } else {
+                ProgressView()
             }
-            .ignoresSafeArea(edges: .top)
-            .navigationTitle("Task")
-            .navigationBarTitleDisplayMode(.inline)
-        } else {
-            ProgressView()
         }
+        .alert(
+            isPresented: $store.displayError,
+            error: store.error,
+            actions: { _ in Button("OK") {} },
+            message: { Text($0.recoverySuggestion ?? "") }
+        )
     }
 }
 

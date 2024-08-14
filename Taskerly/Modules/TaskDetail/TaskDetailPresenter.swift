@@ -26,6 +26,6 @@ extension TaskDetailPresenter: TaskDetailPresentationLogic {
     }
 
     func presentError(response: TaskDetail.ShowError.Response) {
-        view.displayError(viewModel: .init(message: (response.error as NSError).description))
+        view.displayError(viewModel: .init(error: .error(response.error)))
     }
 }

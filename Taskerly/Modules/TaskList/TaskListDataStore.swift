@@ -9,7 +9,7 @@ import Foundation
 
 final class TaskListDataStore: ObservableObject {
     @Published var isLoading = false
-    @Published var errorMessage: String?
+    @Published var error: AppError?
     @Published var displayError = false
 
     @Published var tasks: [TaskItem] = []
