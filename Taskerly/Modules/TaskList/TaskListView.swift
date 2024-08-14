@@ -91,7 +91,7 @@ struct TaskListView: View {
                     Button(action: createAction ?? {
                         router.show(.create)
                     }, label: { Text("+ Add Task") })
-                    .buttonStyle(LinearButtonStyle())
+                        .buttonStyle(LinearButtonStyle())
                 }
 
                 Spacer().frame(height: 24)
@@ -177,10 +177,18 @@ struct TaskListView: View {
         let interactor = TaskListInteractor(presenter: presenter, database: database)
         view.interactor = interactor
         view.createAction = {
+            let status: TaskItem.Status?
+            switch view.store.tab {
+            case .all:
+                status = nil
+            default:
+                status = .pending
+            }
             try? database.create(TaskItem(timestamp: Date(), name: "Task"))
-            interactor.fetchTasks(request: .init())
+            interactor.fetchTasks(request: .init(status: status))
         }
         return view
     }
+    .environmentObject(Router())
 }
 #endif

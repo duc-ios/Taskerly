@@ -89,6 +89,8 @@ struct TaskDetailView: View {
 #if DEBUG
 #Preview {
     NavigationStack {
+        // swiftlint:disable:next force_try
+        let database = try! TaskItemDB(useInMemoryStore: true)
         TaskDetailView()
             .configured(
                 task: TaskItem(

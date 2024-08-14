@@ -47,7 +47,7 @@ struct CreateTaskView: View {
 
     @ObservedObject var store = CreateTaskDataStore()
     @EnvironmentObject var router: Router
-   @Environment(\.safeAreaInsets) private var safeAreaInsets
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
 
     init() {
         let standardAppearance = UINavigationBarAppearance()
@@ -165,5 +165,6 @@ struct CreateTaskView: View {
         // swiftlint:disable:next force_try
         CreateTaskView().configured(database: try! TaskItemDB(useInMemoryStore: true))
     }
+    .environmentObject(Router())
 }
 #endif
